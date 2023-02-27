@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Copy Page Content",
+  "version": "1.0",
+  "description": "Copy the content of the current page to the clipboard on right-click.",
+
+  "permissions": [
+    "clipboardWrite",
+    "activeTab",
+    "contextMenus",
+    "scripting",
+    "tabs"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
